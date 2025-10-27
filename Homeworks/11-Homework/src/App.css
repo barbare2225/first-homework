@@ -1,0 +1,38 @@
+
+.book{
+  border: 2px solid black;
+  width: 300px;
+  margin: 20px;
+  padding: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);  
+}
+.book img{
+  width: 100%;
+  height: auto;
+}
+#book_img{
+  border-radius: 5px;
+}
+.book h2{
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+.book p{
+  margin: 5px 0;
+  font-size: 1em;
+}
+.book p:last-child{
+  margin-top: 15px;
+  font-style: italic;
+}
+.book button{
+  padding: 20px 35px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.book button:hover{
+  background-color: #45a049;
+}
