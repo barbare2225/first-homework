@@ -44,6 +44,14 @@ class Todolist extends PureComponent {
     }));
   };
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return (
+      nextState.inputValue !== this.state.inputValue ||
+      nextState.todos !== this.state.todos ||
+      nextState.completed !== this.state.completed
+    );
+  }
+
   render() {
     const { inputValue, todos, completed } = this.state;
     return (
@@ -59,17 +67,11 @@ class Todolist extends PureComponent {
         </form>
 
         <div className="columns">
-          {/* To-Do tasks */}
           <div className="column">
             <h2>შესასრულებელი</h2>
-            <TodoList
-              tasks={todos}
-              completeTask={this.completeTask}
-              deleteTask={this.deleteTask}
-            />
+            <TodoList tasks={todos} completeTask={this.completeTask} />
           </div>
 
-          {/* Completed tasks */}
           <div className="column">
             <h2>შესრულებული</h2>
             <DoneTasks
@@ -85,17 +87,15 @@ class Todolist extends PureComponent {
 }
 
 // აქტიური დავალებების სია
-const TodoList = React.memo(({ tasks, completeTask, deleteTask }) => {
+const TodoList = React.memo(({ tasks, completeTask }) => {
+  console.log("TodoList rendered"); 
   return (
     <ul>
       {tasks.map((task) => (
-        <TaskItem
-          key={task.id}
-          task={task}
-          onAction={completeTask}
-          onDelete={deleteTask}
-          actionLabel="დასრულება"
-        />
+        <li key={task.id} className="task-item">
+          <span>{task.text}</span>
+          <button onClick={() => completeTask(task.id)}>დასრულება</button>
+        </li>
       ))}
     </ul>
   );
@@ -103,36 +103,18 @@ const TodoList = React.memo(({ tasks, completeTask, deleteTask }) => {
 
 // შესრულებული დავალებების სია
 const DoneTasks = React.memo(({ doneTasks, onReset, onDelete }) => {
+  console.log("DoneTasks rendered"); 
   return (
     <ul>
       {doneTasks.map((task) => (
-        <TaskItem
-          key={task.id}
-          task={task}
-          onAction={onReset}
-          onDelete={onDelete}
-          actionLabel="დაბრუნება"
-          done
-        />
+        <li key={task.id} className="task-item">
+          <span className="done">{task.text}</span>
+          <button onClick={() => onReset(task.id)}>დაბრუნება</button>
+          <button onClick={() => onDelete(task.id)}>წაშლა</button>
+        </li>
       ))}
     </ul>
   );
 });
-
-// თითოეული დავალება
-const TaskItem = React.memo(
-  ({ task, onAction, onDelete, actionLabel, done }) => {
-    console.log(`TaskItem rendered: ${task.text}`); // შეგიძლიათ ნახოთ რენდერი კონსოლში
-    return (
-      <li className="task-item">
-        <span className={done ? "done" : ""}>{task.text}</span>
-        <div>
-          <button onClick={() => onAction(task.id)}>{actionLabel}</button>
-          {onDelete && <button onClick={() => onDelete(task.id)}>წაშლა</button>}
-        </div>
-      </li>
-    );
-  }
-);
 
 export default Todolist;
