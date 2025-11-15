@@ -60,7 +60,7 @@ export default function App() {
         <div className="board-column">
           <h2 className="column-title-backlog">Backlog | {backlog.length}</h2>
           {backlog.map((task, i) => (
-            <div key={i} className="task-card border-blue">
+            <div key={i} className={`task-card ${i % 2 === 0 ? 'border-blue' : 'border-red'}`}>
               {task}
               <div className="task-actions">
                 <button onClick={() => startTask(i)}>▶</button>
