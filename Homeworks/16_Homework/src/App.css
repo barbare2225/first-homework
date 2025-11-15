@@ -1,35 +1,27 @@
 /* Layout */
 .board-wrapper {
   width: 100%;
-  padding: 30px;
+  padding: 50px;
   background: #f5f5f5;
   min-height: 100vh;
-}
-
-.board-title {
-  text-align: center;
-  font-size: 24px;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 25px;
+  
 }
 
 .board-columns {
   display: flex;
   gap: 6px;
   justify-content: center;
-  
 }
 
 /* Columns */
 .board-column {
-  width: 32%;
-  min-width: 320px;
-  max-width: 380px;
+  width: 285px;
   padding: 28px;
-  border-radius: 12px;
+  border-radius: 8px;
   border: 1px solid #ddd;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  background-color: white;
+
 }
 
 
@@ -155,7 +147,7 @@
   font-size: 20px;
   border: none;
   background: transparent;
-  color: #777;
+  color: #779;
   cursor: pointer;
 }
 

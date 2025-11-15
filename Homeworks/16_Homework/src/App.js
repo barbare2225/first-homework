@@ -52,7 +52,7 @@ export default function App() {
 
   return (
     <div className="board-wrapper">
-      <h1 className="board-title">Kanban Todo Board</h1>
+<h1></h1>
 
       <div className="board-columns">
 
