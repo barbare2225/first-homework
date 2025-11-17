@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "character": "Naruto Uzumaki",
+    "about": "Energetic ninja who dreams of becoming Hokage.",
+    "factId": 101,
+    "fact": "enjoyes eating ramen",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi1-VPOO1Y8TdPfJ1wBd0EZQDTTgi0wa0smA&s"
+  },
+  {
+    "id": 2,
+    "character": "Sasuke Uchiha",
+    "about": "Quiet and powerful shinobi seeking to restore his clan.",
+    "factId": 102,
+    "fact": "...",
+    "imageUrl": "https://cdn.myanimelist.net/images/characters/9/131317.jpg?s=9705c17dba36c2edebded3a72dc1a46e"
+  },
+  {
+    "id": 3,
+    "character": "Sakura Haruno",
+    "about": "Skilled medical ninja with exceptional strength.",
+    "factId": 103,
+    "fact": "has cute pink hair",
+    "imageUrl": "https://cdn.myanimelist.net/images/characters/9/69275.jpg?s=36c4ad9f4440d77918c34c49870e719c"
+  },
+  {
+    "id": 4,
+    "character": "Kakashi Hatake",
+    "about": "Elite shinobi known for his Sharingan and leadership.",
+    "factId": 104,
+    "fact": "has big secret #_#",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0785/4004/6646/files/3066349af440df8abee3d1f9535f63de_480x480.jpg?v=1727252049"
+  }
+]
